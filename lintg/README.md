@@ -1,1 +1,1 @@
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Jakidxav/UW_ATMS_321/master?filepath=%2Flintg%2Flintg.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Jakidxav/UW_ATMS_321/master)

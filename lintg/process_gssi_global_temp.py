@@ -109,7 +109,7 @@ def calculate_significance(n, a0, a1, vart, autocorr, temp_res):
 
 #matplotlib plotting method for plotting temperature anomaly data along with linear fit
 #provided by a start and end year
-def plot(start, end, dataframe, column, c, sig_level):
+def plot(start, end, dataframe, column, c, sig_level, save_fig):
     #check for correct year input
     minyr = dataframe.Year.min()
     maxyr = dataframe.Year.max()
@@ -156,4 +156,11 @@ def plot(start, end, dataframe, column, c, sig_level):
 
     #add legend
     plt.legend(fontsize='large')
+
+    #creat figure name in case user decides to save
+    figname = 'trend_{}_{}-{}_sig{}.png'.format(column, start, end, sig_level)
+
+    if save_fig==True:
+        plt.savefig(figname, format='png', bbox_inches='tight')
+
     plt.show()

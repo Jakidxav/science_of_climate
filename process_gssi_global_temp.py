@@ -1,6 +1,8 @@
 """
 Authors: Jakidxav, Dennis Hartmann
 Description: Program to clean GISSTemp Global Temperature Record Data, offer plotting methods.
+
+Part of this code has been adapted from programs written by Dennis Hartmann: auto.m and lintg.m
 """
 import numpy as np
 import pandas as pd
@@ -31,7 +33,7 @@ def clean(dataframe):
 
 
 #This function calculates the autocorrelation function for our data set for
-#a 1-month time lag. This method is based off of code written by Dennis Hartmann: auto.m.
+#a 1-month time lag.
 def auto(data):
 	data1 = data[:-1]
 	data1 = data1 - np.mean(data1)
@@ -52,7 +54,6 @@ def auto(data):
 #This method takes in a dataframe and a column name for the GSSI Global Temperature data.
 #It calculates the covariance, residuals, and autocorrelation for those residuals, and returns
 #the length of the input data, the variance, the parameters a0 and a1, the residual, and its autocorrelation for a 1 time-step lag.
-#This method is based off of part of code written by Dennis Hartmann: lintg.m
 def calculate_res_autocorr(dataframe, column_name):
 	temp = dataframe[column_name]
 	temp_mean = np.mean(temp)
@@ -83,7 +84,6 @@ def calculate_res_autocorr(dataframe, column_name):
 #This method computs the sensitivity of a given trend. To do so, it calculates the degrees
 #of freedom for a given autocorrelation, and confidence limits using residuals. Then a t-test
 #is performed for a given level of significance. Currently, only 95% significance is implemented.
-#This method is based off of part of code written by Dennis Hartmann: lintg.m
 def calculate_significance(n, a0, a1, vart, autocorr, temp_res):
 	# compute confidence limits on slope
 	#first compute estimated degrees of freedom from red noise model of residuals.

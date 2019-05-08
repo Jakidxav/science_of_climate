@@ -1,2 +1,2 @@
-Welcome to ATM S 321, the Science of Climate at the University of Washington!
+This repository contains Jupyter Notebooks developped with Dennis Hartmann at the University of Washington.
 
